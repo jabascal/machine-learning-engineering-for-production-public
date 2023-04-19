@@ -23,9 +23,9 @@ def test_accuracy():
 
 def test_pipeline_and_scaler():
     # Check if clf is instance of sklearn.pipeline.Pipeline
-    isPipeline = instance(clf, Pipeline)
+    isPipeline = isinstance(clf, Pipeline)
     assert isPipeline
 
     if isPipeline:
         firstStep = [v for v in clf.name_steps.values()][0]
-        assert isintance(firstStep, StandardScaler) 
+        assert isinstance(firstStep, StandardScaler) 
